@@ -435,6 +435,7 @@
       .site-link { bottom: 1rem; right: 1.2rem; }
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/exifr/dist/full.esm.js" type="module"></script>
 </head>
 <body>
 
@@ -606,16 +607,27 @@
     updateLightbox(); syncStrip();
   }
 
-  function updateLightbox() {
-    const p = PHOTOS[lbIndex];
-    const img = document.getElementById('lb-img');
-    img.classList.remove('loaded');
-    img.src = imgSrc(p, lbIndex);
-    img.onload = () => img.classList.add('loaded');
-    document.getElementById('lb-title').textContent = p.title;
-    document.getElementById('lb-sub').textContent = `${p.venue}  ·  ${p.date}`;
-    document.getElementById('lb-counter').textContent = `${lbIndex + 1} / ${PHOTOS.length}`;
-  }
+  async function updateLightbox() {
+  const p = PHOTOS[lbIndex];
+  const img = document.getElementById('lb-img');
+  img.classList.remove('loaded');
+  img.src = imgSrc(p, lbIndex);
+  img.onload = async () => {
+    img.classList.add('loaded');
+    try {
+      const exif = await exifr.parse(img.src, ['Headline', 'Caption-Abstract', 'DateCreated', 'ObjectName']);
+      const title = exif?.Headline || exif?.ObjectName || p.title;
+      const caption = exif?.['Caption-Abstract'] || p.venue;
+      const date = exif?.DateCreated?.getFullYear?.() || p.date;
+      document.getElementById('lb-title').textContent = title;
+      document.getElementById('lb-sub').textContent = `${caption}  ·  ${date}`;
+    } catch {
+      document.getElementById('lb-title').textContent = p.title;
+      document.getElementById('lb-sub').textContent = `${p.venue}  ·  ${p.date}`;
+    }
+  };
+  document.getElementById('lb-counter').textContent = `${lbIndex + 1} / ${PHOTOS.length}`;
+}
 
   function renderStrip() {
     document.getElementById('lb-strip').innerHTML = PHOTOS.map((p, i) => `
