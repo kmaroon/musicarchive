@@ -349,7 +349,9 @@
       justify-content: center;
       padding: 4rem;
       backdrop-filter: blur(8px);
+      overflow-y: auto;
     }
+
     #info-overlay.open { display: flex; }
 
     .info-close {
@@ -382,13 +384,17 @@
 
     .info-bio {
       font-family: 'Syne', sans-serif;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 300;
       color: rgba(232,228,222,0.6);
-      max-width: 480px;
-      line-height: 1.7;
+      max-width: 680px;
+      width: 100%;
+      line-height: 1.8;
       margin-bottom: 3rem;
-      
+    }
+
+    .info-bio p + p {
+      margin-top: 1.2rem;
     }
 
     .info-links {
