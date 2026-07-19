@@ -556,7 +556,7 @@
     )}`;
   }
 
-  function imgSrc(p, i) { return p.src || makePlaceholder(p.aspect || '3/2', i); }
+  function imgSrc(p, i) { return p.src; }
 
   let currentView = 'masonry';
   let lbIndex = 0;
