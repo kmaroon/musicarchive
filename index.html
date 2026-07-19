@@ -621,10 +621,10 @@
   img.onload = async () => {
     img.classList.add('loaded');
     try {
-      const exif = await exifr.parse(img.src, true); console.log(exif);
-      const title = exif?.Headline || exif?.ObjectName || p.title;
-      const caption = exif?.['Caption-Abstract'] || p.venue;
-      const rawDate = exif?.DateCreated || exif?.DateTimeOriginal;
+      const exif = await exifr.parse(img.src, true);
+      const title = exif?.title?.value || exif?.ObjectName || p.title;
+      const caption = exif?.Caption || exif?.ImageDescription || p.venue;
+      const rawDate = exif?.DateTimeOriginal;
       const date = rawDate
       ? rawDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
       : p.date;
