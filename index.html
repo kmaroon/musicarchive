@@ -621,7 +621,7 @@
   img.onload = async () => {
     img.classList.add('loaded');
     try {
-      const exif = await exifr.parse(img.src, ['Headline', 'Caption-Abstract', 'DateCreated', 'ObjectName', 'DateTimeOriginal']);
+      const exif = await exifr.parse(img.src, true); console.log(exif);
       const title = exif?.Headline || exif?.ObjectName || p.title;
       const caption = exif?.['Caption-Abstract'] || p.venue;
       const rawDate = exif?.DateCreated || exif?.DateTimeOriginal;
