@@ -611,10 +611,13 @@
   img.onload = async () => {
     img.classList.add('loaded');
     try {
-      const exif = await exifr.parse(img.src, ['Headline', 'Caption-Abstract', 'DateCreated', 'ObjectName']);
+      const exif = await exifr.parse(img.src, ['Headline', 'Caption-Abstract', 'DateCreated', 'ObjectName', 'DateTimeOriginal']);
       const title = exif?.Headline || exif?.ObjectName || p.title;
       const caption = exif?.['Caption-Abstract'] || p.venue;
-      const date = exif?.DateCreated?.getFullYear?.() || p.date;
+      const rawDate = exif?.DateCreated || exif?.DateTimeOriginal;
+      const date = rawDate
+      ? rawDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+      : p.date;
       document.getElementById('lb-title').textContent = title;
       document.getElementById('lb-sub').textContent = `${caption}  ·  ${date}`;
     } catch {
