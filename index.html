@@ -621,13 +621,14 @@
   img.onload = async () => {
     img.classList.add('loaded');
     try {
-      const exif = await exifr.parse(img.src, true);
+      const fullUrl = new URL(img.src, window.location.href).href;
+      const exif = await exifr.parse(fullUrl, true);
       const title = exif?.title?.value || exif?.ObjectName || p.title;
       const caption = exif?.Caption || exif?.ImageDescription || p.venue;
       const rawDate = exif?.DateTimeOriginal;
       const date = rawDate
-      ? rawDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
-      : p.date;
+        ? rawDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+        : p.date;
       document.getElementById('lb-title').textContent = title;
       document.getElementById('lb-sub').textContent = `${caption}  ·  ${date}`;
     } catch {
