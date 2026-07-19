@@ -569,7 +569,7 @@
   function renderMasonry() {
     document.getElementById('masonry').innerHTML = PHOTOS.map((p, i) => `
       <div class="masonry-item" style="animation-delay:${(i * 0.03).toFixed(2)}s" onclick="openLightbox(${i})">
-        <img src="${imgSrc(p,i)}" alt="${p.title}" loading="lazy" style="aspect-ratio:${p.aspect||'3/2'}" />
+        <img src="${imgSrc(p,i)}" alt="${p.title}" loading="lazy" />
         <div class="item-caption">
           <div class="cap-title">${p.title}</div>
           <div class="cap-sub">${p.venue}&nbsp;·&nbsp;${p.date}</div>
