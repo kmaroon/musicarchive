@@ -222,14 +222,14 @@
     }
 
     .scroll-top:hover {
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  border-color: rgba(255,255,255,0.5);
-}
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border-color: rgba(255,255,255,0.5);
+    }
 
-.scroll-top.visible {
-  display: flex;
-}
+    .scroll-top.visible {
+      display: flex;
+    }
     
 
     /* ─── LIGHTBOX ──────────────────────────── */
@@ -420,8 +420,8 @@
     .info-bio {
       font-family: 'Syne', sans-serif;
       font-size: 1rem;
-      font-weight: 300;
-      color: rgba(232,228,222,0.6);
+      font-weight: 400;
+      color: rgba(232,228,222,0.85);
       max-width: 680px;
       width: 100%;
       line-height: 1.8;
@@ -739,6 +739,10 @@
     if (e.key === 'Escape') {
       closeInfo();
       closeLightbox();
+    }
+    if (document.getElementById('lightbox').classList.contains('open')) {
+      if (e.key === 'ArrowLeft') navigate(-1);
+      if (e.key === 'ArrowRight') navigate(1);
     }
   });
 
