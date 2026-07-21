@@ -769,11 +769,33 @@
       closeInfo();
       closeLightbox();
     }
+  });
+
   window.addEventListener('scroll', () => {
     const btn = document.getElementById('scroll-top');
     btn.classList.toggle('visible', window.scrollY > 400);
-});
   });
+
+  // ── IMAGE PROTECTION ─────────────────────────────────────────────────────────
+  document.addEventListener('contextmenu', e => {
+    if (e.target.tagName === 'IMG') e.preventDefault();
+  });
+  document.addEventListener('dragstart', e => {
+    if (e.target.tagName === 'IMG') e.preventDefault();
+  });
+  document.addEventListener('touchstart', e => {
+    if (e.target.tagName === 'IMG') e.target.style.webkitUserSelect = 'none';
+  }, { passive: true });
+
+  // ── INFO OVERLAY ──────────────────────────────────────────────────────────────
+  function openInfo() {
+    document.getElementById('info-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeInfo() {
+    document.getElementById('info-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
 </script>
   <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="scroll-top">↑</button>
 </body>
