@@ -710,8 +710,8 @@
       document.getElementById('lb-title').textContent = p.title;
       document.getElementById('lb-sub').textContent = `${p.venue}  ·  ${p.date}`;
     }
-  };
-  document.getElementById('lb-counter').textContent = `${lbIndex + 1} / ${PHOTOS.length}`;
+    };
+      document.getElementById('lb-counter').textContent = `${lbIndex + 1} / ${PHOTOS.length}`;
 }
 
   function getCleanCaption(element) {
@@ -734,11 +734,16 @@
     if (a) a.scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
   }
 
-  document.addEventListener('keydown', e => {
-    if (!document.getElementById('lightbox').classList.contains('open')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') navigate(-1);
-    if (e.key === 'ArrowRight') navigate(1);
+ document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      closeInfo();
+      closeLightbox();
+    }
+  });
+
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('scroll-top');
+    btn.classList.toggle('visible', window.scrollY > 400);
   });
 
   // ── IMAGE PROTECTION ─────────────────────────────────────────────────────────
