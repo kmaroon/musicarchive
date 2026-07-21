@@ -740,7 +740,13 @@
       closeInfo();
       closeLightbox();
     }
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('scroll-top');
+    btn.classList.toggle('visible', window.scrollY > 400);
+});
   });
 </script>
+  <a class="site-link" href="https://www.kimberlymaroon.com" target="_blank">kimberlymaroon.com</a>
+  <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="scroll-top">↑</button>
 </body>
 </html>
