@@ -687,6 +687,12 @@
   document.getElementById('lb-counter').textContent = `${lbIndex + 1} / ${PHOTOS.length}`;
 }
 
+  function getCleanCaption(element) {
+  const rawText = element.getAttribute('data-caption') || element.alt;
+  const parser = new DOMParser();
+  return parser.parseFromString(rawText, 'text/html').body.textContent;
+}
+  
   function renderStrip() {
     document.getElementById('lb-strip').innerHTML = PHOTOS.map((p, i) => `
       <img class="lb-strip-item${i === lbIndex ? ' active' : ''}"
