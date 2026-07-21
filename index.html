@@ -671,7 +671,7 @@
     try {
       const fullUrl = new URL(img.src, window.location.href).href;
       const exif = await exifr.parse(fullUrl, true);
-      const title = exif?.title?.value || exif?.ObjectName || p.title;
+      const title = (exif?.title?.value || exif?.ObjectName || p.title)?.replace(/&amp;/g, '&');
       const caption = exif?.Caption || exif?.ImageDescription || p.venue;
       const rawDate = exif?.DateTimeOriginal;
       const date = rawDate
