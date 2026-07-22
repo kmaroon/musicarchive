@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artists — Kimberly Maroon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="artists.css" />
+</head>
+<body>
+
+  <header>
+    <a class="site-title" href="index.html">Kimberly Maroon — Loud Quiet Loud</a>
+    <div class="header-right">
+      <a class="nav-btn" href="index.html">Archive</a>
+      <a class="nav-btn active" href="artists.html">Artists</a>
+      <button class="nav-btn" onclick="openInfo()">Info</button>
+    </div>
+  </header>
+
+  <div class="jump-bar" id="jump-bar"></div>
+
+  <main>
+    <div id="artist-list"></div>
+  </main>
+
+  <!-- INFO OVERLAY -->
+  <div id="info-overlay">
+    <button class="info-close" onclick="closeInfo()">
+      <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.4">
+        <line x1="3" y1="3" x2="14" y2="14"/><line x1="14" y1="3" x2="3" y2="14"/>
+      </svg>
+    </button>
+    <div class="info-name">Kimberly Maroon</div>
+    <div class="info-subtitle">A 20 Year Music Photography Archive</div>
+    <div class="info-bio">
+      <p>As a self taught photographer, live music was what captivated me in the beginning. The photographer I am today – chasing adrenaline pumping experiences, drawn to community and the power of personal stories – was shaped first by a decade following punk, rock, hardcore and metal artists. From house basements, dive bars and VFW halls to historic ballrooms and theatres, and a church basement, to amphitheaters, arenas, recording studios, and even a beloved 60s bowling alley — I was relentless for showing up, capturing the artists, the crowds, the crews, and the spaces that held us all. I saw bands explode, move on to form other acts, bands that toured through a narrow geographic radius, and ultimately without me knowing at the time — I became the designated record keeper.</p>
+      <p>The camera was the anchor in all the chaos, a way to contain all the energy, and a machine that reminded me that I was fearless. Loud Quiet Loud, a formula in music of a quiet verse and a loud chorus — The Pixies were known for it, then Nirvana — is reminiscent of how I felt photographing this music live. I disappeared behind the camera, and in an instant everything loud and turbulent became quiet and focused through the frame. Releasing this collection now as a memory palace, my hope is that it's loud again.</p>
+    </div>
+    <div class="info-links">
+      <a class="info-link" href="https://www.kimberlymaroon.com" target="_blank">Main Site</a>
+      <a class="info-link" href="mailto:hello@kimberlymaroon.com">Contact</a>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-text">All Images © Kimberly Maroon</span>
+  </footer>
+
+  <a class="site-link" href="https://www.kimberlymaroon.com" target="_blank">kimberlymaroon.com</a>
+
+  <script src="artists.js"></script>
+</body>
+</html>
