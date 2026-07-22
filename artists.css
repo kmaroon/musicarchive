@@ -70,7 +70,9 @@ header {
   transition: color 0.2s;
 }
 .nav-link:hover { color: var(--ink); }
-.nav-link.active { color: var(--ink); }
+.nav-link.active {
+  color: #ffffff;
+}
 
 /* ─── JUMP LINKS ────────────────────────── */
 .jump-bar {
