@@ -333,7 +333,7 @@ header {
 .info-subtitle {
   font-family: 'DM Mono', monospace;
   font-size: 0.62rem;
-  color: var(--muted);
+  color: var(--ink).
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 2.5rem;
