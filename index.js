@@ -29,9 +29,10 @@ const artistFilter = urlParams.get('artist');
 // ─── MASONRY & LIGHTBOX INITIALIZATION ──────────────────────
 async function initGallery() {
   const container = document.getElementById('masonry');
+  const filterBanner = document.getElementById('artist-filter-banner');
   if (!container) return;
 
-  // Fetch photos array or manifest (Adjust URL path if using local JSON)
+  // Fetch photos array or manifest (fallback to photosData if local file fails)
   try {
     const res = await fetch('photos.json');
     allImages = await res.json();
@@ -47,11 +48,25 @@ async function initGallery() {
     filteredImages = allImages.filter(img => 
       img.artist && img.artist.toLowerCase() === artistFilter.toLowerCase()
     );
+
+    // Display Artist Filter Banner in DOM
+    if (filterBanner) {
+      filterBanner.innerHTML = `
+        <span>Viewing: <strong>${artistFilter}</strong> (${filteredImages.length} photos)</span>
+        <button class="clear-filter-btn" onclick="clearFilter()">Show All</button>
+      `;
+    }
   } else {
     filteredImages = [...allImages];
+    if (filterBanner) filterBanner.innerHTML = '';
   }
 
   container.innerHTML = '';
+
+  if (filteredImages.length === 0) {
+    container.innerHTML = `<p style="color: var(--dim); font-family: 'DM Mono', monospace; padding: 2rem;">No images found for this artist.</p>`;
+    return;
+  }
 
   // Render items into Masonry
   filteredImages.forEach((imgData, index) => {
@@ -64,11 +79,21 @@ async function initGallery() {
     img.alt = imgData.artist || 'Archive Photo';
     img.loading = 'lazy';
     
-    img.onload = () => img.classList.add('loaded');
+    // Check if already cached or trigger on load
+    if (img.complete) {
+      img.classList.add('loaded');
+    } else {
+      img.onload = () => img.classList.add('loaded');
+    }
 
     item.appendChild(img);
     container.appendChild(item);
   });
+}
+
+function clearFilter() {
+  window.history.replaceState({}, document.title, window.location.pathname);
+  location.reload();
 }
 
 // ─── LIGHTBOX FUNCTIONALITY ─────────────────────────────────
@@ -80,6 +105,7 @@ function openLightbox(index) {
   lb.classList.add('active');
   document.body.style.overflow = 'hidden';
 
+  renderLightboxStrip();
   updateLightbox();
 }
 
@@ -93,6 +119,24 @@ function navigate(direction) {
   if (currentIndex < 0) currentIndex = filteredImages.length - 1;
   if (currentIndex >= filteredImages.length) currentIndex = 0;
   updateLightbox();
+}
+
+function renderLightboxStrip() {
+  const strip = document.getElementById('lb-strip');
+  if (!strip) return;
+
+  strip.innerHTML = '';
+  filteredImages.forEach((imgData, idx) => {
+    const thumb = document.createElement('img');
+    thumb.className = `lb-thumb ${idx === currentIndex ? 'active' : ''}`;
+    thumb.src = imgData.src || imgData.url;
+    thumb.alt = imgData.artist || '';
+    thumb.onclick = () => {
+      currentIndex = idx;
+      updateLightbox();
+    };
+    strip.appendChild(thumb);
+  });
 }
 
 function updateLightbox() {
@@ -109,17 +153,44 @@ function updateLightbox() {
   if (lbTitle) lbTitle.textContent = current.artist || 'Untitled';
   if (lbSub) lbSub.textContent = [current.venue, current.year || current.date].filter(Boolean).join(' — ');
 
-  // Optional EXIF Parsing using EXIFR
+  // Highlight active thumbnail in strip
+  const thumbs = document.querySelectorAll('.lb-thumb');
+  thumbs.forEach((thumb, idx) => {
+    thumb.classList.toggle('active', idx === currentIndex);
+    if (idx === currentIndex) {
+      thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  });
+
+  // Preload adjacent images for seamless navigation
+  preloadAdjacentImages();
+
+  // EXIF Parsing using EXIFR (if loaded)
   if (typeof exifr !== 'undefined' && lbImg) {
-    exifr.parse(lbImg).then(exif => {
-      if (exif && exif.DateTimeOriginal) {
-        console.log('EXIF Loaded:', exif);
-      }
-    }).catch(() => {});
+    exifr.parse(current.src || current.url)
+      .then(exif => {
+        if (exif && exif.DateTimeOriginal) {
+          console.log('EXIF Loaded:', exif);
+        }
+      })
+      .catch(() => {});
   }
 }
 
-// Keyboard arrow navigation
+function preloadAdjacentImages() {
+  const nextIdx = (currentIndex + 1) % filteredImages.length;
+  const prevIdx = (currentIndex - 1 + filteredImages.length) % filteredImages.length;
+  
+  [nextIdx, prevIdx].forEach(idx => {
+    const data = filteredImages[idx];
+    if (data) {
+      const img = new Image();
+      img.src = data.src || data.url;
+    }
+  });
+}
+
+// ─── GLOBAL EVENT LISTENERS ─────────────────────────────────
 document.addEventListener('keydown', (e) => {
   const lb = document.getElementById('lightbox');
   if (!lb || !lb.classList.contains('active')) return;
