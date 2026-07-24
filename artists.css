@@ -145,9 +145,9 @@ header {
 /* ─── JUMP BAR ──────────────────────────── */
 .jump-bar {
   position: sticky;
-  top: 65px;
+  top: 59px; /* Aligns directly below sticky header */
   z-index: 90;
-  background: rgba(17,16,16,0.97);
+  background: rgba(17,16,16,0.98);
   border-bottom: 1px solid var(--dim);
   padding: 0.75rem 2rem;
   display: flex;
@@ -331,16 +331,18 @@ footer {
 @media (max-width: 768px) {
   .header-right { display: none; }
   .hamburger { display: flex; }
-  .jump-bar { padding: 0.6rem 1.2rem; top: 58px; }
+  .jump-bar { 
+    padding: 0.5rem 1rem; 
+    top: 53px; /* Adjusted for mobile header height */
+    gap: 0.1rem;
+  }
+  .jump-link {
+    padding: 0.2rem 0.35rem; /* Slightly compact padding so letters fit nicely */
+  }
   main { padding: 1.5rem 1.2rem 5rem; }
   .artist-grid { grid-template-columns: repeat(2, 1fr); gap: 0.2rem 1rem; }
   .artist-name { font-size: 0.82rem; }
   .site-link { display: none; }
   #info-overlay { padding: 2rem; }
   .info-name { font-size: 1.6rem; }
-}
-
-@media (min-width: 769px) {
-  .hamburger { display: none; }
-  .mobile-menu { display: none !important; }
 }
