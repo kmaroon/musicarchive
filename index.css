@@ -140,6 +140,20 @@ header {
 .mobile-menu .nav-btn:hover { color: var(--ink); }
 .mobile-menu .nav-btn.active { color: #ffffff; }
 
+.mobile-menu-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  padding: 6px;
+  line-height: 0;
+  transition: color 0.2s;
+}
+.mobile-menu-close:hover { color: var(--ink); }
+
 /* ─── MASONRY ───────────────────────────── */
 #masonry {
   columns: 4 200px;
