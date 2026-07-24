@@ -149,9 +149,17 @@ header {
   color: var(--text);
 }
 
+/* ─── SEARCH INPUT FOCUS ────────────────── */
+#search-input:focus {
+  outline: none;
+  border-color: var(--dim) !important;
+}
+
 /* ─── ARTIST LIST & GRID ────────────────── */
 main {
   padding: 2rem 1.5rem 5rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .letter-section {
