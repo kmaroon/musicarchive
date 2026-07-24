@@ -324,18 +324,44 @@ footer {
   text-transform: uppercase;
 }
 
+/* ─── JUMP BAR ──────────────────────────── */
+.jump-bar {
+  position: sticky;
+  top: 65px; /* Default desktop top offset */
+  z-index: 90;
+  background: #111010; /* Solid background so scrolling text never bleeds through */
+  border-bottom: 1px solid var(--dim);
+  padding: 0.75rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+}
+
 /* ─── RESPONSIVE ────────────────────────── */
 @media (max-width: 768px) {
   .header-right { display: none; }
   .hamburger { display: flex; }
+
+  /* Allow header text to scale down slightly so it stays on 1-2 clean lines */
+  .site-title {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+  }
+
   .jump-bar { 
-    padding: 0.5rem 1rem; 
-    top: 53px; /* Adjusted for mobile header height */
-    gap: 0.1rem;
+    padding: 0.6rem 0.8rem; 
+    /* Increased top offset to clear the multi-line header */
+    top: 88px; 
+    gap: 0.2rem 0.1rem;
+    justify-content: center;
   }
+
   .jump-link {
-    padding: 0.2rem 0.35rem; /* Slightly compact padding so letters fit nicely */
+    font-size: 0.75rem;
+    padding: 0.25rem 0.35rem;
+    line-height: 1;
   }
+
   main { padding: 1.5rem 1.2rem 5rem; }
   .artist-grid { grid-template-columns: repeat(2, 1fr); gap: 0.2rem 1rem; }
   .artist-name { font-size: 0.82rem; }
