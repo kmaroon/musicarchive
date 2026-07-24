@@ -168,22 +168,25 @@ header {
   overflow: hidden;
   display: block;
   background: var(--surface);
-  opacity: 0;
-  animation: fadeIn 0.5s ease forwards;
+  min-height: 120px; /* Holds column space while image fetches */
 }
 
+/* Base image state (hidden) */
 .masonry-item img {
   display: block;
   width: 100%;
   height: auto;
-  transition: transform 0.55s cubic-bezier(0.25,0,0,1);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.55s cubic-bezier(0.25,0,0,1);
 }
 
-.masonry-item:hover img { transform: scale(1.04); }
+/* Fades in ONLY when the individual image file finishes downloading */
+.masonry-item img.loaded {
+  opacity: 1;
+}
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
+.masonry-item:hover img { 
+  transform: scale(1.04); 
 }
 
 /* ─── SCROLL TO TOP ─────────────────────── */
