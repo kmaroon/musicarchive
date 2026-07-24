@@ -125,6 +125,37 @@ header {
   font-size: 1.2rem;
 }
 
+/* ─── ARTIST FILTER BANNER ──────────────── */
+#artist-filter-banner {
+  padding: 1rem 1.5rem 0.5rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--dim);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#artist-filter-banner:empty {
+  display: none;
+}
+
+.clear-filter-btn {
+  background: none;
+  border: 1px solid var(--faint);
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-filter-btn:hover {
+  border-color: var(--dim);
+  background: var(--surface);
+}
+
 /* ─── MASONRY ───────────────────────────── */
 #masonry {
   columns: 4 200px;
@@ -141,6 +172,7 @@ header {
   display: block;
   background: var(--surface);
   min-height: 120px;
+  transform: translateZ(0);
 }
 
 .masonry-item img {
@@ -159,7 +191,7 @@ header {
   transform: scale(1.04); 
 }
 
-/* ─── INFO OVERLAY & LIGHTBOX ───────────── */
+/* ─── INFO OVERLAY ──────────────────────── */
 #info-overlay {
   display: none;
   position: fixed;
@@ -217,6 +249,7 @@ header {
   border-bottom: 1px solid var(--dim);
 }
 
+/* ─── LIGHTBOX ──────────────────────────── */
 #lightbox {
   display: none;
   position: fixed;
@@ -271,6 +304,13 @@ header {
   color: var(--text);
   cursor: pointer;
   z-index: 10;
+  padding: 0.5rem;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.lb-arrow:hover {
+  opacity: 1;
 }
 
 #lb-img {
@@ -285,11 +325,13 @@ header {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+  pointer-events: none;
 }
 
 .lb-title { font-size: 0.9rem; }
 .lb-sub { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--dim); }
 
+/* Lightbox Thumbnail Strip */
 .lb-bottom {
   height: 80px;
   display: flex;
@@ -297,8 +339,30 @@ header {
   padding: 10px;
   overflow-x: auto;
   border-top: 1px solid var(--faint);
+  align-items: center;
+  justify-content: center;
 }
 
+.lb-thumb {
+  height: 100%;
+  width: 60px;
+  object-fit: cover;
+  opacity: 0.4;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.lb-thumb:hover {
+  opacity: 0.8;
+}
+
+.lb-thumb.active {
+  opacity: 1;
+  border-color: var(--text);
+}
+
+/* ─── FIXED UTILITIES & FOOTER ──────────── */
 .site-link {
   position: fixed;
   bottom: 1rem;
@@ -307,6 +371,12 @@ header {
   font-family: 'DM Mono', monospace;
   font-size: 0.7rem;
   text-decoration: none;
+  z-index: 50;
+  transition: color 0.2s;
+}
+
+.site-link:hover {
+  color: var(--text);
 }
 
 .scroll-top {
@@ -318,6 +388,14 @@ header {
   border: 1px solid var(--faint);
   padding: 0.4rem 0.6rem;
   cursor: pointer;
+  z-index: 50;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.scroll-top:hover {
+  border-color: var(--dim);
 }
 
 footer {
@@ -337,4 +415,6 @@ footer {
   .site-title { font-size: 0.75rem; overflow: hidden; text-overflow: ellipsis; }
   .site-link { display: none; }
   #info-overlay { padding: 2rem; }
+  #masonry { columns: 2 140px; }
+  #lb-img { max-width: 95vw; max-height: 65vh; }
 }
