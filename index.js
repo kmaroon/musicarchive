@@ -45,10 +45,15 @@ renderMasonry();
 
 function renderMasonry() {
   document.getElementById('masonry').innerHTML = PHOTOS.map((p, i) => `
-    <div class="masonry-item" style="animation-delay:${(i * 0.03).toFixed(2)}s" onclick="openLightbox(${i})">
-      <img src="${p.src}" alt="" loading="lazy" decoding="async" />
+    <div class="masonry-item" onclick="openLightbox(${i})">
+      <img 
+        src="${p.src}" 
+        alt="" 
+        loading="lazy" 
+        decoding="async"
+        onload="this.classList.add('loaded')"
+      />
     </div>`).join('');
-}
 }
 
 function openLightbox(i) {
