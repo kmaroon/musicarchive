@@ -44,6 +44,21 @@ const PHOTOS = [
   { src: "images/NewYorkDolls-kimberlymaroon2003-09.jpg" },
   { src: "images/NewYorkDolls-kimberlymaroon2003-11.jpg" },
   { src: "images/MikeSki-kimberlymaroon2003-5.jpg" },
+  { src: "images/ALOL06-kimberlymaroon-1.jpg" },
+  { src: "images/AMPhil07-kimberlymaroon-3.jpg" },
+  { src: "images/AMPhil07-kimberlymaroon-7.jpg" },
+  { src: "images/AMPhil07-kimberlymaroon-8.jpg" },
+  { src: "images/BigDVWT11-kimberlymaroon-1.jpg" },
+  { src: "images/BigDVWT11-kimberlymaroon-2.jpg" },
+  { src: "images/ConvergeSOTU-kimberlymaroon-1.jpg" },
+  { src: "images/CourtTavern09-kimberlymaroon-1.jpg" },
+  { src: "images/MCR-PR-kimberlymaroon-04.jpg" },
+  { src: "images/MCR-PR-kimberlymaroon-07.jpg" },
+  { src: "images/SOTU07-kimberlymaroon-1.jpg" },
+  { src: "images/ThursdaySTLD10-kimberlymaroon-4.jpg" },
+  { src: "images/ThursdaySTLD11-kimberlymaroon-2.jpg" },
+  { src: "images/ThursdayVWT06-kimberlymaroon-1.jpg" },
+  { src: "images/ThursdayVWT06-kimberlymaroon-3.jpg" },
 ];
 
 // ── INIT ──────────────────────────────────────────────────────
