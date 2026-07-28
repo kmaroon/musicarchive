@@ -37,6 +37,13 @@ const PHOTOS = [
   { src: "images/TheExplosionFUC-kimberlymaroon2003-04.jpg" },
   { src: "images/TheExplosionFUC-kimberlymaroon2003-05.jpg" },
   { src: "images/TheExplosionFUC-kimberlymaroon2003-09.jpg" },
+  { src: "images/NewYorkDolls-kimberlymaroon2003-03.jpg" },
+  { src: "images/NewYorkDolls-kimberlymaroon2003-04.jpg" },
+  { src: "images/NewYorkDolls-kimberlymaroon2003-06.jpg" },
+  { src: "images/NewYorkDolls-kimberlymaroon2003-08.jpg" },
+  { src: "images/NewYorkDolls-kimberlymaroon2003-09.jpg" },
+  { src: "images/NewYorkDolls-kimberlymaroon2003-11.jpg" },
+  { src: "images/MikeSki-kimberlymaroon2003-5.jpg" },
 ];
 
 // ── INIT ──────────────────────────────────────────────────────
