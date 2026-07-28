@@ -30,7 +30,6 @@ const PHOTOS = [
   { src: "images/JelloBiafra-kimberlymaroon2003-1.jpg" },
   { src: "images/JelloBiafra-kimberlymaroon2003-2.jpg" },
   { src: "images/SadaharuAsburyLanes-kimberlymaroon2003-3.jpg" },
-  { src: "images/SadaharuAsburyLanes-kimberlymaroon2003-6.jpg" },
   { src: "images/SadaharuAsburyLanes-kimberlymaroon2003-7.jpg" },
   { src: "images/TheExplosionFUC-kimberlymaroon2003-01.jpg" },
   { src: "images/TheExplosionFUC-kimberlymaroon2003-02.jpg" },
