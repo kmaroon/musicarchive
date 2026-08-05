@@ -70,6 +70,15 @@ const PHOTOS = [
   { src: "images/MikeStreetDogs-kimberlymaroon-1.jpg"},
   { src: "images/FCportrait-kimberlymaroon-1.jpg"},
   { src: "images/FCportrait-kimberlymaroon-2.jpg"},
+  { src: "images/FCgodcity-kimberlymaroon-01.jpg"},
+  { src: "images/FCgodcity-kimberlymaroon-02.jpg"},
+  { src: "images/FCgodcity-kimberlymaroon-03.jpg"},
+  { src: "images/FCgodcity-kimberlymaroon-04.jpg"},
+  { src: "images/FCgodcity-kimberlymaroon-05.jpg"},
+  { src: "images/FCgodcity-kimberlymaroon-06.jpg"},
+  { src: "images/FCgodcity-kimberlymaroon-07.jpg"},
+  { src: "images/FCgodcity-kimberlymaroon-09.jpg"},
+  { src: "images/FCgodcity-kimberlymaroon-10.jpg"},
 ];
 
 // ── INIT ──────────────────────────────────────────────────────
