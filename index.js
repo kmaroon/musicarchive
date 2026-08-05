@@ -62,6 +62,14 @@ const PHOTOS = [
   { src: "images/ThursdaySTLD11-kimberlymaroon-2.jpg" },
   { src: "images/ThursdayVWT06-kimberlymaroon-1.jpg" },
   { src: "images/ThursdayVWT06-kimberlymaroon-3.jpg" },
+  { src: "images/Jucifer-kimberlymaroon-1.jpg" },
+  { src: "images/Jucifer-kimberlymaroon-2.jpg" },
+  { src: "images/Jucifer-kimberlymaroon-3.jpg"},
+  { src: "images/Jucifer-kimberlymaroon-5.jpg"},
+  { src: "images/Jucifer-kimberlymaroon-7.jpg"},
+  { src: "images/MikeStreetDogs-kimberlymaroon-1.jpg"},
+  { src: "images/FCportrait-kimberlymaroon-1.jpg"},
+  { src: "images/FCportrait-kimberlymaroon-2.jpg"},
 ];
 
 // ── INIT ──────────────────────────────────────────────────────
