@@ -87,7 +87,8 @@ const PHOTOS = [
   { src: "images/boysetsfireSS04-kimberlymaroon-1.jpg"},
   { src: "images/LGS-FUChurch-kimberlymaroon-1.jpg"},
   { src: "images/FATASS-kimberlymaroon-1.jpg"},
-  { src: "images/WarpaintBC-kimberlymaroon-1.jpg"}
+  { src: "images/WarpaintBC-kimberlymaroon-1.jpg"},
+  { src: "images/NormaJeanPDprint-kimberlymaroon-1.jpg"}
   
 ];
 
