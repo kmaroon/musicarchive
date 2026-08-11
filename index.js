@@ -79,6 +79,15 @@ const PHOTOS = [
   { src: "images/FCGodCity-kimberlymaroon-07.jpg"},
   { src: "images/FCGodCity-kimberlymaroon-09.jpg"},
   { src: "images/FCGodCity-kimberlymaroon-10.jpg"},
+  { src: "images/Notebook-kimberlymaroon-1.jpg"},
+  { src: "images/FilmBinder-kimberlymaroon-1.jpg"},
+  { src: "images/LovedOnes-Sinclair-kimberlymaroon-1.jpg"},
+  { src: "images/AlkTriocrowdHOB-kimberlymaroon-1.jpg"},
+  { src: "images/Glassjaw-kimberlymaroon-1.jpg"},
+  { src: "images/boysetsfireSS04-kimberlymaroon-1.jpg"},
+  { src: "images/LGS-FUChurch-kimberlymaroon-1.jpg"},
+  { src: "images/FATASS-kimberlymaroon-1.jpg"}
+  
 ];
 
 // ── INIT ──────────────────────────────────────────────────────
