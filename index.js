@@ -88,7 +88,11 @@ const PHOTOS = [
   { src: "images/LGS-FUChurch-kimberlymaroon-1.jpg"},
   { src: "images/FATASS-kimberlymaroon-1.jpg"},
   { src: "images/WarpaintBC-kimberlymaroon-1.jpg"},
-  { src: "images/NormaJeanBWprint-kimberlymaroon-1.jpg"}
+  { src: "images/NormaJeanBWprint-kimberlymaroon-1.jpg"},
+  { src: "images/NewportFolk-kimberlymaroon-1.jpg"},
+  { src: "images/TheBronxHOB-kimberlymaroon-1.jpg"},
+  {src:  "images/TheBronxHOB-kimberlymaroon-2.jpg"},
+  {src:  "images/TheBronxHOB-kimberlymaroon-4.jpg"}
   
 ];
 
