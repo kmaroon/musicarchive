@@ -91,8 +91,12 @@ const PHOTOS = [
   { src: "images/NormaJeanBWprint-kimberlymaroon-1.jpg"},
   { src: "images/NewportFolk-kimberlymaroon-1.jpg"},
   { src: "images/TheBronxHOB-kimberlymaroon-1.jpg"},
-  {src:  "images/TheBronxHOB-kimberlymaroon-2.jpg"},
-  {src:  "images/TheBronxHOB-kimberlymaroon-4.jpg"}
+  { src: "images/TheBronxHOB-kimberlymaroon-2.jpg"},
+  { src: "images/TheBronxHOB-kimberlymaroon-4.jpg"}, 
+  { src: "images/ETID-kimberlymaroon-10.jpg"},
+  { src: "images/ETID-kimberlymaroon-08.jpg"},
+  { src: "images/ETID-kimberlymaroon-06.jpg"},
+  { src: "images/ETID-kimberlymaroon-03.jpg"}
   
 ];
 
