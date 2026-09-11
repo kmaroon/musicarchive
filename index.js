@@ -96,7 +96,11 @@ const PHOTOS = [
   { src: "images/ETID-kimberlymaroon-10.jpg"},
   { src: "images/ETID-kimberlymaroon-08.jpg"},
   { src: "images/ETID-kimberlymaroon-06.jpg"},
-  { src: "images/ETID-kimberlymaroon-03.jpg"}
+  { src: "images/ETID-kimberlymaroon-03.jpg"},
+  { src: "images/BuilttoSpill-Ventura-kimberlymaroon-19.jpg"}, 
+  { src: "images/BuilttoSpill-Ventura-kimberlymaroon-13.jpg"},
+  { src: "images/BuilttoSpill-Ventura-kimberlymaroon-11.jpg"},
+  { src: "images/BuilttoSpill-Ventura-kimberlymaroon-07.jpg"}
   
 ];
 
