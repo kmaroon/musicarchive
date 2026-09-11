@@ -100,7 +100,14 @@ const PHOTOS = [
   { src: "images/BuilttoSpill-Ventura-kimberlymaroon-19.jpg"}, 
   { src: "images/BuilttoSpill-Ventura-kimberlymaroon-13.jpg"},
   { src: "images/BuilttoSpill-Ventura-kimberlymaroon-11.jpg"},
-  { src: "images/BuilttoSpill-Ventura-kimberlymaroon-07.jpg"}
+  { src: "images/BuilttoSpill-Ventura-kimberlymaroon-07.jpg"}, 
+  { src: "images/AndyBTS-VWT-kimberlymaroon-1.jpg"},
+  { src: "images/Chiodos-kimberlymaroon-1.jpg"},
+  { src: "images/Chiodos-kimberlymaroon-4.jpg"},
+  { src: "images/Chiodos-kimberlymaroon-5.jpg"},
+  { src: "images/Chiodos-kimberlymaroon-6.jpg"},
+  { src: "images/Chiodos-kimberlymaroon-7.jpg"}, 
+  { src: "images/Chiodos-kimberlymaroon-9.jpg"}
   
 ];
 
