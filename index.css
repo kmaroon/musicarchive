@@ -255,7 +255,7 @@ header {
 }
 .lb-sub {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   color: rgba(255,255,255,0.65); /* was 0.4 */
   margin-top: 0.4rem;
   letter-spacing: 0.07em;
