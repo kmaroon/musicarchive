@@ -107,7 +107,11 @@ const PHOTOS = [
   { src: "images/Chiodos-kimberlymaroon-5.jpg"},
   { src: "images/Chiodos-kimberlymaroon-6.jpg"},
   { src: "images/Chiodos-kimberlymaroon-7.jpg"}, 
-  { src: "images/Chiodos-kimberlymaroon-9.jpg"}
+  { src: "images/Chiodos-kimberlymaroon-9.jpg"}, 
+  { src: "images/EngineDownPHIL-kimberlymaroon-18.jpg"},
+  { src: "images/EngineDownPHIL-kimberlymaroon-14.jpg"},
+  { src: "images/EngineDownPHIL-kimberlymaroon-02.jpg"},
+  { src: "images/EngineDownPHIL-Color-kimberlymaroon-12.jpg"}
   
 ];
 
