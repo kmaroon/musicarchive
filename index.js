@@ -111,7 +111,8 @@ const PHOTOS = [
   { src: "images/EngineDownPHIL-kimberlymaroon-18.jpg"},
   { src: "images/EngineDownPHIL-kimberlymaroon-14.jpg"},
   { src: "images/EngineDownPHIL-kimberlymaroon-02.jpg"},
-  { src: "images/EngineDownPHIL-Color-kimberlymaroon-12.jpg"}
+  { src: "images/EngineDownPHIL-Color-kimberlymaroon-12.jpg"}, 
+  { src: "images/StrikeAnywhere-drumstick-KimberlyMaroon-1.jpg"}
   
 ];
 
