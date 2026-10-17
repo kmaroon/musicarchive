@@ -112,8 +112,17 @@ const PHOTOS = [
   { src: "images/EngineDownPHIL-kimberlymaroon-14.jpg"},
   { src: "images/EngineDownPHIL-kimberlymaroon-02.jpg"},
   { src: "images/EngineDownPHIL-Color-kimberlymaroon-12.jpg"}, 
-  { src: "images/StrikeAnywhere-drumstick-KimberlyMaroon-1.jpg"}
-  
+  { src: "images/StrikeAnywhere-drumstick-KimberlyMaroon-1.jpg"},
+  { src: "images/RorschachPoster-KimberlyMaroon-1.jpg"},
+  { src: "images/SOFPoster-KimberlyMaroon-1.jpg"},
+  { src: "images/StarsBook-KimberlyMaroon-1.jpg"},
+  { src: "images/LSSPoster-KimberlyMaroon-1.jpg"}, 
+  { src: "images/RCRFlyer-KimberlyMaroon-1.jpg"},
+  { src: "images/AMalbum-KimberlyMaroon-1.jpg"},
+  { src: "images/MWUPoster-KimberlyMaroon-1.jpg"},
+  { src: "images/EDPoster-KimberlyMaroon-1.jpg"},
+  { src: "images/SadaharuPoster-KimberlyMaroon-1.jpg"}
+
 ];
 
 // ── INIT ──────────────────────────────────────────────────────
