@@ -23,8 +23,6 @@ const PHOTOS = [
   { src: "images/AngelsAirwaves-kimberlymaroon2003-1.jpg" },
   { src: "images/AngelsAirwaves-kimberlymaroon2003-2.jpg" },
   { src: "images/AngelsAirwaves-kimberlymaroon2003-4.jpg" },
-  { src: "images/AngelsAirwaves-kimberlymaroon2003-5.jpg" },
-  { src: "images/AngelsAirwaves-kimberlymaroon2003-7.jpg" },
   { src: "images/AngelsAirwaves-kimberlymaroon2003-9.jpg" },
   { src: "images/hissingchoir-kimberlymaroon2003-1.jpg" },
   { src: "images/JelloBiafra-kimberlymaroon2003-1.jpg" },
